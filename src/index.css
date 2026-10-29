@@ -1,0 +1,275 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+html,body{
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.05) 0%, rgba(14, 165, 233, 0.08) 100%),
+              url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000&auto=format&fit=crop') no-repeat center center fixed;
+  background-size: cover;
+  color: #222;
+  min-height: 100vh;
+  padding-bottom: 60px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================ 
+    Expense Input Section 
+================================ */
+
+
+.labelexp { 
+  width: 90%;
+  max-width: 600px;
+  margin: 50px auto 30px; 
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.labelexp:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 25px 50px rgba(79, 70, 229, 0.12), 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.inputexp { 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.expinput, .amountinput {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; }
+
+.expinput label, .amountinput label { 
+  font-size: 15px;
+  font-weight: bold;
+  color: #444;
+}
+
+.expinput input, .amountinput input { 
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+
+/* ================================
+          Add Button 
+================================ */
+
+
+.labelexp button { 
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  border: none;
+  border-radius: 7px;
+  background-color: #4f46e5;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.labelexp button:hover {
+  background-color: #3730a3;
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.35);
+  transform: translateY(-1px)
+}
+
+.labelexp button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+
+/* ================================
+          Expense List 
+================================ */
+
+
+.prodlist { 
+  width: 90%;
+  max-width: 600px;
+  margin: 8px auto;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.prodlist:hover { 
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* ================================
+        Expense Information
+================================ */
+
+
+.listinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+
+
+/* ================================ 
+          Delete Button
+================================ */
+
+.listdel button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #fee2e2;
+  color: #dc2626;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.listdel button:hover {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.listdel button:active {
+  transform: scale(0.95);
+}
+
+/* ================================
+        Total Amount
+================================ */
+
+
+h3 {
+  width: 90%;
+  max-width: 600px;
+  margin: 25px auto 15px;
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #c9d5fb 0%, #eef2ff 100%);
+  border-left: 5px solid #4f46e5;
+  border-radius: 7px;
+  color: #312e81;
+}
+
+
+/* ================================ 
+      Clear List Button
+================================ */
+
+
+.clearbtn {
+  display: block;
+  width: 90%;
+  max-width: 600px;
+  margin: 10px auto 40px;
+  padding: 11px;
+  border: none;
+  border-radius: 7px;
+  background: #555;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.clearbtn:hover {
+  background: #333;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.clearbtn:active {
+  transform: scale(0.98);
+}
+
+
+/* ================================
+          Empty List
+================================ */
+
+
+.noprod{
+  text-align: center;
+  color: #677281;
+  font-size: 15px;
+  margin: 20px 0;
+  font-weight: 500;
+}
+
+
+/* ================================
+      Responsive Design
+================================ */
+
+
+@media(max-width: 600px){ 
+  .labelexp { 
+    width: 94%;
+    margin-top: 25px;
+    padding: 20px;
+  }
+  .prodlist {
+    width: 94%;
+    padding: 15px;
+  }
+  .listinfo p {
+    font-size: 14px;
+  }
+  .listdel button {
+    padding: 7px 10px;
+    font-size: 13px;
+  }
+
+  h3 {
+    width: 94%;
+    font-size: 17px;
+  }
+  .clearbtn {
+    width: 94%;
+  }
+}
+
+
+
